@@ -5,7 +5,7 @@
 #include <string>
 
 template <typename T>
-class array
+class Array
 {
 	private:
 		//	##########
@@ -15,14 +15,14 @@ class array
 	public:
 		//	##########
 		//	Constrcutor & destructor
-		array();
-		array(unsigned int n);
-		array(const array &obj);
-		~array();
+		Array();
+		Array(unsigned int n);
+		Array(const Array &obj);
+		~Array();
 
 		//	##########
 		//	Operators
-		array &operator=(const array &obj);
+		Array &operator=(const Array &obj);
 		T &operator[](unsigned int index) const;
 
 		//	##########
@@ -38,4 +38,4 @@ class array
 		};
 };
 
-#include "array.tpp"
+#include "Array.tpp"

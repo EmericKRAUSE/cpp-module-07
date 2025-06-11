@@ -1,18 +1,18 @@
 #include "../colors.hpp"
-#include "array.hpp"
+#include "Array.hpp"
 
 int main()
 {
 	{
 		std::cout	<< GRN << "Test with an array of int:" << RESET
 					<< std::endl;
-		array<int> a(10);
+		Array<int> a(10);
 		try
 		{
 			a[0] = 10;
 			std::cout << CYN << "a[0]: " << RESET
 					  << a[0] << std::endl;
-			array<int> b(a);
+			Array<int> b(a);
 			std::cout << CYN << "b[0]: " << RESET
 					  << b[0] << std::endl;
 			std::cout << CYN << "b[10]: " << RESET
@@ -27,13 +27,13 @@ int main()
 	{
 		std::cout	<< GRN << "Test with an array of strings:" << RESET
 					<< std::endl;
-		array<std::string> a(10);
+		Array<std::string> a(10);
 		try
 		{
 			a[0] = "test";
 			std::cout	<< CYN << "a[0]: " << RESET
 						<< a[0] << std::endl;
-			array<std::string> b(a);
+			Array<std::string> b(a);
 			std::cout << CYN << "b[0]: " << RESET
 					  << b[0] << std::endl;
 			std::cout << CYN << "b[10]: " << RESET

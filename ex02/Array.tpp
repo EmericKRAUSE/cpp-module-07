@@ -1,36 +1,35 @@
 #pragma once
-#include "array.hpp"
+#include "Array.hpp"
 
 template <typename T>
-array<T>::array()
+Array<T>::Array()
 	: _elements(NULL), _size(0)
 {
 
 }
 
 template <typename T>
-array<T>::array(unsigned int n)
+Array<T>::Array(unsigned int n)
 	: _elements(new T[n]), _size(n)
 {
-	// for (unsigned int i = 0; i < this->size(); i++)
-	// 	_elements[i] = T();
+	
 }
 
 template <typename T>
-array<T>::array(const array<T> &obj)
+Array<T>::Array(const Array<T> &obj)
 	: _elements(NULL), _size(0)
 {
 	*this = obj;
 }
 
 template <typename T>
-array<T>::~array()
+Array<T>::~Array()
 {
 	delete [] this->_elements;
 }
 
 template <typename T>
-array<T>& array<T>::operator=(const array<T> &obj)
+Array<T> &Array<T>::operator=(const Array<T> &obj)
 {
 	if (this != &obj)
 	{
@@ -45,21 +44,21 @@ array<T>& array<T>::operator=(const array<T> &obj)
 }
 
 template <typename T>
-T& array<T>::operator[](unsigned int index) const
+T &Array<T>::operator[](unsigned int index) const
 {
 	if (index >= _size)
-		throw array<T>::OutOfBounds();
+		throw Array<T>::OutOfBounds();
 	return _elements[index];
 }
 
 template <typename T>
-unsigned int array<T>::size() const
+unsigned int Array<T>::size() const
 {
 	return (this->_size);
 }
 
 template <typename T>
-const char *array<T>::OutOfBounds::what() const throw()
+const char *Array<T>::OutOfBounds::what() const throw()
 {
 	return (RED"Index out of bounds"RESET);
 }
